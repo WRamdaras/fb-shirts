@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+    {% for shirt in category.shirts %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('/img/' ~ shirt.img) }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ shirt.name }}</h5>
+                <p class="card-text">{{ shirt.description }}</p>
+                <p class="card-text"> €{{ shirt.price }}</p>
+                <a href="{{ path('order', {id:shirt.id}) }}" class="btn btn-primary">Order</a>
+                {#                <p class="card-text">{{ shirt.category.name }}</p>#}
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

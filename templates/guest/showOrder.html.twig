@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table mt-4">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Zip code</th>
+            <th scope="col">Mail</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Shirt Order</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+
+{% for order in orders %}
+    <tr>
+{#        <td>{{ order.name }}</td> #}{# Assuming 'name' is a property of the Order entity #}
+    <tr>
+        <th scope="row">{{ order.id }}</th>
+        <td> {{ order.name }}</td>
+        <td>{{ order.lastName }}</td>
+        <td>{{ order.adress }}</td>
+        <td> {{ order.zipcode }}</td>
+        <td>{{ order.mail }}</td>
+        <td>{{ order.phoneNumber }}</td>
+        <td>{{ order.shirts.name }}</td>
+        <td>
+            <a href="{{ path('delete', {id: order.id}) }}" class="btn btn-danger">Delete Order</a>
+        </td>
+{% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

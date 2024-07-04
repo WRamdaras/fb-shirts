@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+    <div class="container">
+        <img class="mb-5" src="{{ asset('img/shirts-banner.jpg') }}" alt="">
+    </div>
+
+    <div class="container text-center text-white">
+        <div class="jumbotron mt-5">
+            <h1 class="display-4">Welcome to Classic Football Shirts!</h1>
+            <p class="lead">At Classic Football Shirts, we're passionate about preserving the legacy of football through iconic shirts from across the decades. Whether you're a die-hard fan reminiscing about the glory days or a collector seeking rare finds, you've come to the right place.</p>
+            <hr class="my-4">
+            <p>Relive historic moments and celebrate your favorite teams with our premium-quality replicas. Each shirt is meticulously crafted to capture the essence of its era, ensuring an authentic and nostalgic experience for fans worldwide.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{{ path('category') }}" role="button">Browse Collection</a>
+            </p>
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
